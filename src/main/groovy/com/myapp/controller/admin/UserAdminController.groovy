@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.ResponseStatus
 
 import javax.annotation.PostConstruct
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid
 
 @Controller
@@ -25,12 +26,8 @@ class UserAdminController extends BaseController {
 
 
    @RequestMapping(method=RequestMethod.GET)
-   @ResponseStatus(HttpStatus.OK)
    @ResponseBody List list() {
-
-        List users = dao.query("from User u")
-
-        return users
+        dao.query("from User u")
     }
 
     @RequestMapping(value="/{id}",method = RequestMethod.GET,headers =["Accept=application/json"])
@@ -80,11 +77,12 @@ class UserAdminController extends BaseController {
     }
 
 
-   // @RequestMapping(value="/",method = RequestMethod.GET)
-  //  String index() {
-      //  log.debug("admin list view")
-      //  'admin/user/index'
-  //  }
+	
+    @RequestMapping("/")
+    String index(HttpServletRequest request) {
+        log.debug("admin list view")
+        'admin/user/index'
+    }
 
     @PostConstruct
     void initializeDemoUsers() {

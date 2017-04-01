@@ -1,9 +1,9 @@
 
     <div class="top-links pull-right">
         <a ng-show="currentUser == null" href="#/signin">Sign In</a>
-        <a ng-show="currentUser != null" href="user/signout">Sign Out</a>
-       <!--  <a ng-show="isUserInRole('admin')" href="/SpringMvcGroovyJpa/admin/user/show/">
-        Admin</a> -->
+        <a ng-show="currentUser != null" href="/SpringMvcGroovyJpa/user/signout">Sign Out</a>
+        <a ng-show="isUserInRole('admin')" href="/SpringMvcGroovyJpa/admin/user/">
+        Admin</a> 
     </div>
 
 

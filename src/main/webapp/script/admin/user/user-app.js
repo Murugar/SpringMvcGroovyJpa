@@ -7,12 +7,12 @@ var currentApp = userApp;
 userApp.config(function ($routeProvider) {
 
 $routeProvider
-  .when('/SpringMvcGroovyJpa', {
-    templateUrl: 'views/admin/user/list.html',
+  .when('/SpringMvcGroovyJpa/admin/user', {
+    templateUrl: '/views/admin/user/list.html',
     controller: 'UserListCtrl'
   })
   .when('/view/:id', {
-      templateUrl: 'views/admin/user/view.html',
+      templateUrl: '/views/admin/user/view.html',
       controller: 'UserViewCtrl'
     })
   .otherwise({

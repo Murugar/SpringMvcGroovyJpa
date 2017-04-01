@@ -8,6 +8,8 @@
            http://www.springframework.org/schema/security/spring-security.xsd">
 
 
+    <http pattern="/js/**" security="none"/>
+    <http pattern="/js/libs/**" security="none"/>
     <http pattern="/script/**" security="none"/>
     <http pattern="/style/**" security="none"/>
     <http pattern="/images/**" security="none"/>
